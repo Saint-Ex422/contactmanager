@@ -29,29 +29,22 @@ public class ContactManagerController {
     @GetMapping("/contacts/{id}")
     public ResponseEntity<Contact> getContact(@PathVariable long id){
         Optional<Contact> optionalContact = contactRepository.findById(id);
-
         Name name = new Name();
-
-//        return ResponseEntity.ok(optionalContact.orElse(new Contact()));
         if(optionalContact.isPresent())
             return ResponseEntity.ok(optionalContact.get());
         else
            return ResponseEntity.notFound().build();
-
     }
 
     @GetMapping("/contacts/call-list")
     public CallListObj[] getCallList(){
         List<PhoneNumber> phoneNumbers = phoneNumberRepository.findByType("home");
-
         return callListService.convertContactsToCallListObj(phoneNumbers).toArray(new CallListObj[1]);
-
     }
 
     @PostMapping("/contacts")
     public ResponseEntity<Contact> createContact(@RequestBody Contact contact){
         Contact contactEnt = new Contact(contact);
-
         Contact savedContact = contactRepository.save(contactEnt);
         return ResponseEntity.ok(savedContact);
     }
@@ -63,21 +56,17 @@ public class ContactManagerController {
 
     @PutMapping("/contacts/{id}")
     public ResponseEntity<Object> updateContact(@RequestBody Contact contact, @PathVariable long id){
-
         Optional<Contact> optionalContact = contactRepository.findById(id);
 
         if(!optionalContact.isPresent())
             return ResponseEntity.notFound().build();
 
         contact.setId(id);
+
         for(PhoneNumber phoneNumber : contact.getPhone())
             phoneNumber.setContact(contact);
 
         Contact savedContact = contactRepository.save(contact);
-
         return ResponseEntity.ok(savedContact);
     }
-
-
-
 }

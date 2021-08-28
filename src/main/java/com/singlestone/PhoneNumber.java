@@ -12,7 +12,6 @@ public class PhoneNumber {
     @JsonIgnore
     private Long id;
 
-
     private String number;
     private String type;
 

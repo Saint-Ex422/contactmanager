@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class CallListService {
 
     public List<CallListObj> convertContactsToCallListObj(List<PhoneNumber> phoneNumbers){
-
         return phoneNumbers.stream()
                 .map(p-> new CallListObj(p.getContact().getName(),p.getNumber())).sorted(new Comparator<CallListObj>() {
                     @Override
@@ -24,7 +23,6 @@ public class CallListService {
                             return result;
                     }
                 }).collect(Collectors.toList());
-
 }
 
 

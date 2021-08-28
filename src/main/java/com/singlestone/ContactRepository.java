@@ -9,9 +9,4 @@ import javax.transaction.Transactional;
 
 
 public interface ContactRepository extends JpaRepository<Contact,Long> {
-
-
-
-
-
 }
