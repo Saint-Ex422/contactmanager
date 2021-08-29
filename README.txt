@@ -10,4 +10,6 @@ the REST portion of the code along with the only part of the code that is truly 
 list from a List of PhoneNumbers. This function was tested by making REST calls to insert a bunch of records and then calling
 the contact-list url to generate the list.
 
+I also added a more traditional unit test for the call-list function.
+
 I did not provide separate tests for the other functions since I found myself essentially testing the behavior of Spring itself

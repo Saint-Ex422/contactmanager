@@ -1,14 +1,10 @@
 package com.singlestone;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
 
-import javax.persistence.Column;
+import lombok.Data;
 import javax.persistence.Embeddable;
 
 @Embeddable
-@AllArgsConstructor
 @Data
 public class Name {
    private String first;
@@ -16,6 +12,12 @@ public class Name {
    private String last;
 
     public Name() {
+    }
+
+    public Name(String first, String middle, String last) {
+        this.first = first;
+        this.middle = middle;
+        this.last = last;
     }
 
     public String getFirst() {
