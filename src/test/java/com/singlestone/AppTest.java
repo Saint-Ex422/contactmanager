@@ -40,118 +40,110 @@ public class AppTest
     private CallListService callListService;
 
 
-    HttpHeaders headers;
-
-    @Before
-    public void setUp(){
-
-
-            String createContactUrl = "http://localhost:" + port + "/contacts";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-
-
-            String json = "{\n" +
-                    "    \"name\": {\n" +
-                    "        \"first\": \"Harold\",\n" +
-                    "        \"middle\": \"Francis\",\n" +
-                    "        \"last\": \"Gilkey\"\n" +
-                    "    },\n" +
-                    "    \"address\": {\n" +
-                    "        \"street\": \"8360 High Autumn Row\",\n" +
-                    "        \"city\": \"Cannon\",\n" +
-                    "        \"state\": \"Delaware\",\n" +
-                    "        \"zip\": \"19797\"\n" +
-                    "    },\n" +
-                    "    \"phone\": [\n" +
-                    "        {\n" +
-                    "            \"number\": \"302-611-9148\",\n" +
-                    "            \"type\": \"home\"\n" +
-                    "        },\n" +
-                    "        {\n" +
-                    "            \"number\": \"302-532-9427\",\n" +
-                    "            \"type\": \"mobile\"\n" +
-                    "        }\n" +
-                    "    ],\n" +
-                    "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
-                    "}";
-
-            HttpEntity<String> request =
-                    new HttpEntity<String>(json, headers);
-
-            String result = restTemplate.postForObject(createContactUrl, request, String.class);
-
-            json = "{\n" +
-                    "    \"name\": {\n" +
-                    "        \"first\": \"Kyle\",\n" +
-                    "        \"middle\": \"Stephen\",\n" +
-                    "        \"last\": \"Bauer\"\n" +
-                    "    },\n" +
-                    "    \"address\": {\n" +
-                    "        \"street\": \"8360 High Autumn Row\",\n" +
-                    "        \"city\": \"Cannon\",\n" +
-                    "        \"state\": \"Delaware\",\n" +
-                    "        \"zip\": \"19797\"\n" +
-                    "    },\n" +
-                    "    \"phone\": [\n" +
-                    "        {\n" +
-                    "            \"number\": \"203-368-8858\",\n" +
-                    "            \"type\": \"home\"\n" +
-                    "        },\n" +
-                    "        {\n" +
-                    "            \"number\": \"302-532-9427\",\n" +
-                    "            \"type\": \"mobile\"\n" +
-                    "        }\n" +
-                    "    ],\n" +
-                    "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
-                    "}";
-
-            request =
-                    new HttpEntity<String>(json, headers);
-
-            restTemplate.postForObject(createContactUrl, request, String.class);
-
-
-            json = "{\n" +
-                    "    \"name\": {\n" +
-                    "        \"first\": \"Andrew\",\n" +
-                    "        \"middle\": \"Francis\",\n" +
-                    "        \"last\": \"Gilkey\"\n" +
-                    "    },\n" +
-                    "    \"address\": {\n" +
-                    "        \"street\": \"8360 High Autumn Row\",\n" +
-                    "        \"city\": \"Cannon\",\n" +
-                    "        \"state\": \"Delaware\",\n" +
-                    "        \"zip\": \"19797\"\n" +
-                    "    },\n" +
-                    "    \"phone\": [\n" +
-                    "        {\n" +
-                    "            \"number\": \"123-456-7890\",\n" +
-                    "            \"type\": \"home\"\n" +
-                    "        },\n" +
-                    "        {\n" +
-                    "            \"number\": \"302-532-9427\",\n" +
-                    "            \"type\": \"mobile\"\n" +
-                    "        }\n" +
-                    "    ],\n" +
-                    "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
-                    "}";
-
-            request =
-                    new HttpEntity<String>(json, headers);
-
-            restTemplate.postForObject(createContactUrl, request, String.class);
-
-
-
-
-    }
-
-
 
 
     @Test
     public void testContactList(){
+
+
+        String createContactUrl = "http://localhost:" + port + "/contacts";
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+
+        String json = "{\n" +
+                "    \"name\": {\n" +
+                "        \"first\": \"Harold\",\n" +
+                "        \"middle\": \"Francis\",\n" +
+                "        \"last\": \"Gilkey\"\n" +
+                "    },\n" +
+                "    \"address\": {\n" +
+                "        \"street\": \"8360 High Autumn Row\",\n" +
+                "        \"city\": \"Cannon\",\n" +
+                "        \"state\": \"Delaware\",\n" +
+                "        \"zip\": \"19797\"\n" +
+                "    },\n" +
+                "    \"phone\": [\n" +
+                "        {\n" +
+                "            \"number\": \"302-611-9148\",\n" +
+                "            \"type\": \"home\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"number\": \"302-532-9427\",\n" +
+                "            \"type\": \"mobile\"\n" +
+                "        }\n" +
+                "    ],\n" +
+                "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
+                "}";
+
+        HttpEntity<String> request =
+                new HttpEntity<String>(json, headers);
+
+        String result = restTemplate.postForObject(createContactUrl, request, String.class);
+
+        json = "{\n" +
+                "    \"name\": {\n" +
+                "        \"first\": \"Kyle\",\n" +
+                "        \"middle\": \"Stephen\",\n" +
+                "        \"last\": \"Bauer\"\n" +
+                "    },\n" +
+                "    \"address\": {\n" +
+                "        \"street\": \"8360 High Autumn Row\",\n" +
+                "        \"city\": \"Cannon\",\n" +
+                "        \"state\": \"Delaware\",\n" +
+                "        \"zip\": \"19797\"\n" +
+                "    },\n" +
+                "    \"phone\": [\n" +
+                "        {\n" +
+                "            \"number\": \"203-368-8858\",\n" +
+                "            \"type\": \"home\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"number\": \"302-532-9427\",\n" +
+                "            \"type\": \"mobile\"\n" +
+                "        }\n" +
+                "    ],\n" +
+                "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
+                "}";
+
+        request =
+                new HttpEntity<String>(json, headers);
+
+        restTemplate.postForObject(createContactUrl, request, String.class);
+
+
+        json = "{\n" +
+                "    \"name\": {\n" +
+                "        \"first\": \"Andrew\",\n" +
+                "        \"middle\": \"Francis\",\n" +
+                "        \"last\": \"Gilkey\"\n" +
+                "    },\n" +
+                "    \"address\": {\n" +
+                "        \"street\": \"8360 High Autumn Row\",\n" +
+                "        \"city\": \"Cannon\",\n" +
+                "        \"state\": \"Delaware\",\n" +
+                "        \"zip\": \"19797\"\n" +
+                "    },\n" +
+                "    \"phone\": [\n" +
+                "        {\n" +
+                "            \"number\": \"123-456-7890\",\n" +
+                "            \"type\": \"home\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"number\": \"302-532-9427\",\n" +
+                "            \"type\": \"mobile\"\n" +
+                "        }\n" +
+                "    ],\n" +
+                "    \"email\": \"harold.gilkey@yahoo.com\"\n" +
+                "}";
+
+        request =
+                new HttpEntity<String>(json, headers);
+
+        restTemplate.postForObject(createContactUrl, request, String.class);
+
+
+
 
         String contactUrl = "http://localhost:"+port+"/contacts/call-list";
 
