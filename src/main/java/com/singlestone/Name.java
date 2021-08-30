@@ -4,6 +4,10 @@ package com.singlestone;
 import lombok.Data;
 import javax.persistence.Embeddable;
 
+/**
+ * Pojo used for storing and retrieving Name data from database
+ */
+
 @Embeddable
 @Data
 public class Name {

@@ -3,6 +3,11 @@ package com.singlestone;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+
+/**
+ * Pojo used for storing and retrieving PhoneNumber data in the database
+ */
+
 @Entity
 @Table(name = "phone_number")
 public class PhoneNumber {

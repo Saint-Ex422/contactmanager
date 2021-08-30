@@ -5,6 +5,10 @@ import lombok.Data;
 
 import javax.persistence.Embeddable;
 
+/**
+ * pojo used for storing Address data for reading and writing from database
+ */
+
 @Data
 @AllArgsConstructor
 @Embeddable

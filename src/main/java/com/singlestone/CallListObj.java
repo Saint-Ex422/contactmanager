@@ -1,5 +1,9 @@
 package com.singlestone;
 
+/**
+ * pojo used for returning the results of the contact list sort functionality
+ */
+
 public class CallListObj {
 
     private Name name;

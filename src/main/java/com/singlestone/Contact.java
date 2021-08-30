@@ -5,6 +5,9 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+pojo used for storing and retrieving Contacts in the database
+ */
 
 @Entity
 @Table(name="contact")
